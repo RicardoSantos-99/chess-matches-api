@@ -1,9 +1,9 @@
 defmodule Chess do
-  @moduledoc """
-  Chess keeps the contexts that define your domain
-  and business logic.
+  # {:ok, conn} = Mongo.Connection.start_link(url: "mongodb://localhost:27017/pokemon")
 
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
-  """
+  # # Gets an enumerable cursor for the results
+  # cursor = Mongo.find(conn, "chess", %{})
+
+  # cursor
+  # |> IO.inspect()
 end

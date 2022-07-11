@@ -15,16 +15,22 @@ defmodule Chess.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Chess.PubSub},
       # Start the Endpoint (http/https)
-      ChessWeb.Endpoint
+      ChessWeb.Endpoint,
       # Start a worker by calling: Chess.Worker.start_link(arg)
       # {Chess.Worker, arg}
+      {Mongo, [name: :mongo, database: "Pokemon", pool_size: 2]}
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Chess.Supervisor]
+    opts = [strategy: :one_for_one, name: MyApp.Supervisor]
     Supervisor.start_link(children, opts)
   end
+
+  # Mongo.Connection.start_link(
+  #   host: "localhost",
+  #   port: 27017,
+  #   database: "pokemon",
+  #   pool_size: 10
+  # )
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.

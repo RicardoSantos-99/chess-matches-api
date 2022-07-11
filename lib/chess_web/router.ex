@@ -7,6 +7,8 @@ defmodule ChessWeb.Router do
 
   scope "/api", ChessWeb do
     pipe_through :api
+
+    get "/", MatchesController, :index
   end
 
   # Enables LiveDashboard only for development
