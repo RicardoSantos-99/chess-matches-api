@@ -3,7 +3,7 @@ defmodule ChessWeb.MatchesController do
 
   def index(conn, params) do
     matches =
-      Mongo.find(:mongo, "chess", params)
+      Mongo.find(:mongo, "games", params)
       |> Enum.to_list()
       |> Enum.map(&Map.delete(&1, "_id"))
 

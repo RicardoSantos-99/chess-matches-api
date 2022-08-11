@@ -45,7 +45,8 @@ defmodule Chess.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:mongodb, ">= 0.5.1", override: true},
-      {:poolboy, ">= 0.0.0"}
+      {:poolboy, ">= 0.0.0"},
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
     ]
   end
 

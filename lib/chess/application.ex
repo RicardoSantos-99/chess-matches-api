@@ -18,10 +18,10 @@ defmodule Chess.Application do
       ChessWeb.Endpoint,
       # Start a worker by calling: Chess.Worker.start_link(arg)
       # {Chess.Worker, arg}
-      {Mongo, [name: :mongo, database: "Pokemon", pool_size: 2]}
+      {Mongo, [name: :mongo, database: "chess", pool_size: 2]}
     ]
 
-    opts = [strategy: :one_for_one, name: MyApp.Supervisor]
+    opts = [strategy: :one_for_one, name: Chess.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
